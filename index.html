@@ -181,6 +181,96 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/centos7demo1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="萌汉药">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/02/centos7demo1/" class="post-title-link" itemprop="url">centos7配置静态ip</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-02 10:22:18" itemprop="dateCreated datePublished" datetime="2020-01-02T10:22:18+08:00">2020-01-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-04 13:51:33" itemprop="dateModified" datetime="2020-01-04T13:51:33+08:00">2020-01-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>centos7配置静态ip<br>ifcfg-ens33这个文件不同的电脑可能文件名字不一样</p>
+<pre><code>[root@itcast06 ~]# vi /etc/sysconfig/network-scripts/ifcfg-ens33
+DEVICE=&quot;eth0&quot;
+BOOTPROTO=&quot;static&quot;  &lt;!--将原来的dhcp改成&quot;static&quot;--&gt;
+HWADDR=&quot;00:0C:29:83:7F:54&quot;
+IPV6INIT=&quot;yes&quot;
+NM_CONTROLLED=&quot;yes&quot;
+ONBOOT=&quot;yes&quot;    &lt;!--这儿要将&quot;no&quot;改成&quot;yes&quot;--&gt;
+TYPE=&quot;Ethernet&quot;
+UUID=&quot;aae85c0a-42db-4772-b940-0fc9c875afd2&quot;
+IPADDR=192.168.174.10   &lt;!--IP地址大家配一个自己想要配的地址，但是必须是同VMnet8的子网IP在同一网段--&gt;
+GATEWAY=192.168.174.2 &lt;!--网关，这个值与我们在第四步“NAT（设置S）...”设置的网关一样--&gt;
+NETMASK=255.255.255.0  &lt;!--子网掩码--&gt;
+DNS1=192.168.174.2         &lt;!--DNS的值也跟我们第四步“NAT（设置）...”设置的的网关一样--&gt;</code></pre><p><img src="/.com//1.PNG" alt><br>重启服务<br>    service network restart<br>使用 ip addr查看ip地址</p>
+
+      
+    </div>
+
+    
+    
+    
+	
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/28/postName/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -204,9 +294,26 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-28 13:54:51 / 修改时间：16:31:53" itemprop="dateCreated datePublished" datetime="2019-12-28T13:54:51+08:00">2019-12-28</time>
+              <time title="创建时间：2019-12-28 13:54:51" itemprop="dateCreated datePublished" datetime="2019-12-28T13:54:51+08:00">2019-12-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-04 10:31:25" itemprop="dateModified" datetime="2020-01-04T10:31:25+08:00">2020-01-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -410,9 +517,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
 </div>
@@ -436,7 +549,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
